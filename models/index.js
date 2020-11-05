@@ -7,16 +7,16 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     operatorsAliases: 0,
 
 
-const dbs = {};
+const db = {};
 
-dbs.Sequelize = Sequelize;
-dbs.sequelize = sequelize;
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
 
-dbs.utente = require("./utente.model")(sequelize, Sequelize);
-dbs.camera = require("./camera.model")(sequelize,Sequelize);
-dbs.struttura = require("./struttura.model")(sequelize,Sequelize);
-dbs.prenotazione = require("./prenotazione.model")(sequelize,Sequelize);
-dbs.pagamento = require("./pagamento.model")(sequelize,Sequelize);
-dbs.immagini = require("./immagini.model")(sequelize,Sequelize);
+db.utente = require("./utente.model")(sequelize, Sequelize);
+db.camera = require("./camera.model")(sequelize,Sequelize);
+db.struttura = require("./struttura.model")(sequelize,Sequelize);
+db.prenotazione = require("./prenotazione.model")(sequelize,Sequelize);
+db.pagamento = require("./pagamento.model")(sequelize,Sequelize);
+db.immagini = require("./immagini.model")(sequelize,Sequelize);
 
-module.exports = dbs;
+module.exports = db;
