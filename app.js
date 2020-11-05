@@ -15,20 +15,15 @@ const areaPersonaleRouter = require('./routes/areaPersonale.routes');
 const prenotazioneRouter = require('./routes/prenotazione.routes')
 
 const app = express();
+
+app.use(cors());
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", CLIENT_ORIGIN);
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE");
+  res.header("Access-Control-Allow-Origin", '*');
   res.header("Access-Control-Allow-Credentials", true);
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(204);
-  }
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
   next();
 });
-app.use(cors());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
@@ -36,8 +31,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.options('*', cors()) // da includere prima delle altre routes
-app.use(bodyParser.json()); // <--- Here
+app.use(bodyParser.json());
+app.options('*', cors());
+
 
 app.use('/', indexRouter);
 app.use('/strutture', struttureRouter);
