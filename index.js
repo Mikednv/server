@@ -13,7 +13,7 @@ var app = require('./app');
  * Get port from environment and store in Express.
  */
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3006;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
