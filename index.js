@@ -16,7 +16,6 @@ app.listen(port, () => console.log('server started on port', port))
 
 var debug = require('debug')('server:server');
 var http = require('http');
-var app = require('./app');
 /**
  * Get port from environment and store in Express.
  */
