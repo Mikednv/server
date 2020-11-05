@@ -13,9 +13,10 @@ var app = require('./app');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '5703');
-app.set('port', port);
-
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
 /**
  * Create HTTP server.
  */
