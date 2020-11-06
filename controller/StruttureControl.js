@@ -57,7 +57,7 @@ exports.registraCamera = async (req, res, next) => {
                     numero_ospiti:numero_ospiti,
                     aria_condizionata:aria_condizionata,
                     servizio_in_camera: servizio,
-                    riscaldamenti:riscaldamento,
+                    riscaldamento:riscaldamento,
                     prezzo:prezzo,
                     id_struttura:id_struttura,
         })
